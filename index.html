@@ -173,6 +173,23 @@
     border: 1px solid var(--sand);
   }
 
+  /* HERO PHOTO */
+  .hero-photo {
+    width: 100%;
+    max-width: 560px;
+    margin-top: 3rem;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 24px 64px rgba(61,48,40,0.12);
+  }
+
+  .hero-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
   /* SECTIONS */
   section { padding: 5rem 2rem; }
 
@@ -282,6 +299,50 @@
     color: var(--muted);
   }
 
+  /* GALLERY */
+  .gallery-section {
+    background: var(--white);
+  }
+
+  .gallery-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .gallery-grid .gallery-item:first-child {
+    grid-column: span 2;
+  }
+
+  .gallery-item {
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.04);
+  }
+
+  @media (max-width: 600px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .gallery-grid .gallery-item:first-child {
+      grid-column: span 2;
+    }
+  }
+
   /* PROFILE */
   .profile-wrap {
     max-width: 580px;
@@ -295,17 +356,11 @@
   }
 
   .avatar {
-    width: 72px;
-    height: 72px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    background: var(--warm);
     border: 2px solid var(--sand);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    color: var(--brown);
+    object-fit: cover;
     flex-shrink: 0;
   }
 
@@ -437,6 +492,7 @@
   <a href="#" class="nav-logo">Citrus</a>
   <ul class="nav-links">
     <li><a href="#menu">メニュー</a></li>
+    <li><a href="#gallery">ギャラリー</a></li>
     <li><a href="#profile">院長紹介</a></li>
     <li><a href="#access">アクセス</a></li>
     <li><a href="#reserve">ご予約</a></li>
@@ -463,6 +519,9 @@
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>
       Instagramを見る
     </a>
+  </div>
+  <div class="hero-photo fade-up">
+    <img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/1653345/21e2788ecf8e5c8029580ebf1dbae5df_1be981870239e579c1300b0193d71e46.jpg?width=562" alt="Citrus サロン" />
   </div>
 </section>
 
@@ -531,11 +590,33 @@
   </p>
 </section>
 
+<!-- GALLERY -->
+<section id="gallery" class="gallery-section">
+  <p class="section-label">GALLERY</p>
+  <div class="gallery-grid">
+    <div class="gallery-item fade-up">
+      <img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/1653345/ed9b5bebe44157984d2b1425c53410cb_9b20b95e3c1b2f0f195c732ca2c78f90.jpg?width=562" alt="サロン内観" />
+    </div>
+    <div class="gallery-item fade-up">
+      <img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/1653345/901178fd7110cbc043b46902e9c92512_bf3629c57ebdb93e0d4ab5cb79f2ba06.jpg?width=562" alt="サロン内観" />
+    </div>
+    <div class="gallery-item fade-up">
+      <img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/1653345/055920f62819cbc9328fb829610850a4_2659c15697fbb08df360efd41014953b.jpg?width=562" alt="サロン内観" />
+    </div>
+    <div class="gallery-item fade-up">
+      <img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/1653345/997052d27e501c93ab2b421dea05de4f_a965454d3415fe34bb256e9ab12a4eaa.jpg?width=562" alt="サロン内観" />
+    </div>
+    <div class="gallery-item fade-up">
+      <img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/1653345/c89f5f2da21c970e5aa870c17b005541_f4f61aa100add959a44d57e3fa5a1f31.jpg?width=562" alt="サロン内観" />
+    </div>
+  </div>
+</section>
+
 <!-- PROFILE -->
 <section id="profile" style="background: var(--warm);">
   <p class="section-label">PROFILE</p>
   <div class="profile-wrap fade-up">
-    <div class="avatar">真</div>
+    <img class="avatar" src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/1653345/72f7a85234995f670b86d5cd67e1a421_3933b1d327c5ccdd1ee0dd818bd5f9aa.jpg?width=562" alt="真鍋 翔" />
     <div>
       <p class="profile-name">真鍋 翔（まなべ しょう）</p>
       <p class="profile-title">鍼灸師 / サロンオーナー　1990.02.06生まれ</p>
